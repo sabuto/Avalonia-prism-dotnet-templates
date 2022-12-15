@@ -1,0 +1,7 @@
+.vs
+.vscode
+[Bb]in/
+[Oo]bj/
+*.nupkg
+*.DS_store
+.idea
