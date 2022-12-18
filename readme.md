@@ -1,5 +1,9 @@
 ﻿# Avalonia Prism Templates for `dotnet new`
 
+This is an adapted version of [Avalonia Templates](https://github.com/AvaloniaUI/avalonia-dotnet-templates/tree/master) to be used for Avalonia Prism
+
+I have only tested this with .NET 7 and the Rider IDE, I would love some help testing with other runtimes and IDE's
+
 For more information about `dotnet new` templates see [here](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/).
 
 ## Installing the templates
@@ -7,7 +11,7 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 Run from a command line:
 
 ```powershell
-dotnet new install Avalonia.Prism.Templates
+dotnet new install Templates.Avalonia.Prism
 ```
 
 [//]: # (The templates should now be available in `dotnet new list`:)

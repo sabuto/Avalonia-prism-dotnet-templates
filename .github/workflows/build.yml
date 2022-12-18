@@ -1,5 +1,8 @@
 ﻿on:
   push:
+    tags:
+      - '*'
+    
     
 jobs:
   build-and-publish-nuget:
@@ -21,7 +24,9 @@ jobs:
         run: |
           dotnet new install *.nupkg
       - name: Run Tests
+        id: test
         run: |
           cd tests && ./build-test.ps1
       - name: Publish to Nuget
         run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API}} -s 'https://api.nuget.org/v3/index.json' --skip-duplicate
+        if: steps.test.outcome == 'success'
