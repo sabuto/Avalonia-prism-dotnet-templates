@@ -1,0 +1,28 @@
+﻿on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+jobs:
+  build-and-publish-nuget:
+    runs-on: windows-latest
+    name: Build and Publish to nuget
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set VERSION variable from tag
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+      - name: Setup .NET Core 7.0.*
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "7.0.x"
+      - name: Pack
+        run: |
+          dotnet pack Avalonia.Prism.Templates.csproj --output .
+      - name: Install Templates
+        run: |
+          dotnet new install *.nupkg
+      - name: Run Tests
+        run: |
+          cd tests && ./build-test.ps1
+      - name: Publish to Nuget
+        run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API}} -s 'https://api.nuget.org/v3/index.json' --skip-duplicate
