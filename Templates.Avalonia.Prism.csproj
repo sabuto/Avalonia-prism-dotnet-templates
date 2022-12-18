@@ -3,7 +3,7 @@
     <PropertyGroup>
         <PackageType>Template</PackageType>
         <PackageVersion>0.0.1</PackageVersion>
-        <PackageId>Avalonia.Prism.Templates</PackageId>
+        <PackageId>Templates.Avalonia.Prism</PackageId>
         <Title>Avalonia Prism Templates</Title>
         <Description>Templates for creating Avalonia applications and libraries using the prism framework.</Description>
         <PackageTags>dotnet-new;templates;avalonia</PackageTags>

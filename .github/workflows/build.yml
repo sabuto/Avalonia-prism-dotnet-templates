@@ -16,7 +16,7 @@ jobs:
           dotnet-version: "7.0.x"
       - name: Pack
         run: |
-          dotnet pack Avalonia.Prism.Templates.csproj --output .
+          dotnet pack Templates.Avalonia.Prism.csproj --output .
       - name: Install Templates
         run: |
           dotnet new install *.nupkg
@@ -24,4 +24,4 @@ jobs:
         run: |
           cd tests && ./build-test.ps1
       - name: Publish to Nuget
-        run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API}} -s 'https://api.nuget.org/v3/index.json'
+        run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API}} -s 'https://api.nuget.org/v3/index.json' --skip-duplicate
