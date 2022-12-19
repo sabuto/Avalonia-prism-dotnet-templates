@@ -80,7 +80,7 @@ if (Test-Path "output") {
 }
 
 
-Test-Template "avalonia.prism.sample" "AvaloniaApp" "C#"
+Create-And-Build "avalonia.prism.sample" "AvaloniaApp" "C#"
 Create-And-Build "avalonia.prism.dialog" "AvaloniaMvvm" "C#"
 # Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#"
 # Test-Template "avalonia.app" "AvaloniaApp" "F#"
