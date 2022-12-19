@@ -41,7 +41,7 @@ function Test-Template {
 #     # Instantiate each item template in the project
 #     Exec { dotnet new avalonia.prism.sample -o $outDir/$lang/$name -n NewResourceDictionary }
 #     Exec { dotnet new avalonia.styles -o $outDir/$lang/$name -n NewStyles }
-#     Exec { dotnet new avalonia.usercontrol -o $outDir/$lang/$name -n NewUserControl -lang $lang }
+    Exec { dotnet new avalonia.prism.usercontrol -o $outDir/$lang/$name -n NewUserControl -lang $lang }
 #     Exec { dotnet new avalonia.window -o $outDir/$lang/$name -n NewWindow -lang $lang }
 #     If($lang -eq "F#")
 #     {
@@ -80,6 +80,7 @@ if (Test-Path "output") {
 }
 
 
+Test-Template "avalonia.prism.sample" "AvaloniaApp" "C#"
 Create-And-Build "avalonia.prism.sample" "AvaloniaApp" "C#"
 Create-And-Build "avalonia.prism.dialog" "AvaloniaMvvm" "C#"
 # Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#"
