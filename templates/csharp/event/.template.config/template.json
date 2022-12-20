@@ -1,0 +1,26 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Sabuto",
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Prism", "Windows", "Linux", "macOS" ],
+  "defaultName": "Event",
+  "description": "A Prism Event",
+  "groupidentity": "Avalonia.Prism.Event",
+  "identity": "Avalonia.Prism.Event",
+  "name": "Avalonia Prism Event",
+  "primaryOutputs": [
+    { "path": "NewEvent.cs" }
+  ],
+  "shortName": "avalonia.prism.event",
+  "sourceName": "NewEvent",
+  "symbols": {
+    "namespace": {
+      "description": "Namespace for the generated code",
+      "replaces": "PrismAvalonia.Events",
+      "type": "parameter"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  }
+}

@@ -43,6 +43,8 @@ function Test-Template {
 #     Exec { dotnet new avalonia.styles -o $outDir/$lang/$name -n NewStyles }
     Exec { dotnet new avalonia.prism.usercontrol -o $outDir/$lang/$name -n NewUserControl -lang $lang }
     Exec { dotnet new avalonia.prism.window -o $outDir/$lang/$name -n NewWindow -lang $lang }
+    Exec { dotnet new avalonia.prism.event -o $outDir/$lang/$name -n NewEvent -lang $lang }
+    
 
     # Build
     Exec { dotnet build $outDir/$lang/$name }
